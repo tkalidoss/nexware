@@ -3,8 +3,7 @@
 Simple Palindrome Check Using Angular + Spring Boot + JPA + MySQL
 
 1. Schema First Application (First Create DB And Run SCRIPT WHICH IS LOCATED IN RESOURCES FOLDER (db.sql))
-2. IF CORS OCCURS WE NEED TO HANDLE CORS in BACKEND AS BOTH ARE SPERATE RESOURCE URI
-3. To Run Backend ( go to root folder -> write the command [Clean is Optional You can either use ./gradlew clean bootRun or ./gradlew bootRun]
+2. To Run Backend ( go to root folder -> write the command [Clean is Optional You can either use ./gradlew clean bootRun or ./gradlew bootRun]
 
 
 
