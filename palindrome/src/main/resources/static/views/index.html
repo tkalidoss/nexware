@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Palindrome List</title>
+</head>
+<body ng-app="palindrome">
+<hr/>
+<div class="container" ng-controller="PalindromeController">
+    <div class="row">
+        <label>Palindrome</label>
+        <input type="text" id="id1"
+               list="romes" ng-required maxlength="100"
+               ng-model="dto.list"  />
+        <datalist id="romes">
+            <option ng-repeat="palindrome in palindromes"
+            value=" " readonly="true">{{palindrome.list}}</option>
+        </datalist>
+        <button ng-click="save(dto.list)" class="btn btn-sm btn-info">Submit</button>
+
+    </div>
+    <hr/>
+    <table width="35%" class="w3-table-all">
+        <tr>
+            <th width="10%">S.No</th>
+            <th>
+                <a ng-click="orderByField='list'; reverseSort = !reverseSort">
+                    Palindrome <span ng-show="orderByField == 'list'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                </a>
+            </th>
+        </tr>
+        <tr ng-repeat="palindrome in palindromes|orderBy:orderByField:reverseSort">
+            <td>{{$index+1}}</td>
+            <td>{{palindrome.list}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/PalindromeController.js"></script>
+<script src="js/app/PalindromeService.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/app/app.css"/>
+</html>
